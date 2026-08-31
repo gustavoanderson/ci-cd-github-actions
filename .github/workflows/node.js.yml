@@ -3,6 +3,7 @@ name: Teste CI - Cypress
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
