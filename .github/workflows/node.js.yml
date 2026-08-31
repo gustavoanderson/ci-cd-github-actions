@@ -9,6 +9,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js
@@ -22,10 +25,11 @@ jobs:
     - name: Executar testes
       run: npm test
     - name: Gerar relatório Allure
+      if: always()
       run: npm run report:generate
     - name: Publicar relatório no Github Pages
-    - name: Deploy
+      if: always()
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
+        publish_dir: ./allure-report
