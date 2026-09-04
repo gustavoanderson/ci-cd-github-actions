@@ -146,3 +146,13 @@ vite.config.ts.timestamp-*
 allure-report/
 allure-results/
 videos/
+
+# Cypress
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+# Playwright
+/playwright-report/
+/playwright/.cache/
+/test-results/
